@@ -19,6 +19,7 @@ export function SearchForm() {
           name="search"
           placeholder="Buscar por nome"
           className="absolute right-0 z-10 h-full w-full border-none pl-8"
+          autoComplete="off"
         />
       </div>
       <Button type="submit">Buscar</Button>
