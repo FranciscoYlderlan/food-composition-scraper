@@ -7,7 +7,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
-import { FoodItemSchemaType } from '@/models/schemas/zod/food-item-schema'
+import { ComponentSchemaType } from '@/models/schemas/zod/component-schema'
 import {
   createColumnHelper,
   flexRender,
@@ -16,20 +16,21 @@ import {
 } from '@tanstack/react-table'
 import { useRouter } from 'next/navigation'
 
-type FoodItemTableProps = {
-  data: FoodItemSchemaType[]
+type ComponentTableProps = {
+  data: ComponentSchemaType[]
 }
 
-export function FoodItemTable({ data }: FoodItemTableProps) {
+export function ComponentTable({ data }: ComponentTableProps) {
   const router = useRouter()
-  const columnHeadersArray: Array<keyof FoodItemSchemaType> = [
-    'code',
+  const columnHeadersArray: Array<keyof ComponentSchemaType> = [
+    'id',
     'name',
-    'scientificName',
-    'group',
-    'brand',
+    'unit',
+    'foodItemCode',
+    'name',
+    'dataCount',
   ]
-  const columnHelper = createColumnHelper<FoodItemSchemaType>()
+  const columnHelper = createColumnHelper<ComponentSchemaType>()
 
   // const columns = [
   //   columnHelper.accessor('code', {
@@ -71,11 +72,7 @@ export function FoodItemTable({ data }: FoodItemTableProps) {
           </TableHeader>
           <TableBody>
             {table.getRowModel().rows.map((row) => (
-              <TableRow
-                key={row.id}
-                className="hover: cursor-pointer hover:bg-ring/40"
-                onClick={() => router.push(`/details/${row.original.code}`)}
-              >
+              <TableRow key={row.id}>
                 {row.getVisibleCells().map(({ id, column, getContext }) => (
                   <TableCell key={id} className="border">
                     {flexRender(column.columnDef.cell, getContext())}
