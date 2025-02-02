@@ -1,4 +1,5 @@
 'use client'
+import { Button } from '@/components/ui/button'
 import {
   Table,
   TableBody,
@@ -12,8 +13,15 @@ import {
   createColumnHelper,
   flexRender,
   getCoreRowModel,
+  getPaginationRowModel,
   useReactTable,
 } from '@tanstack/react-table'
+import {
+  ChevronLeft,
+  ChevronRight,
+  ChevronsLeft,
+  ChevronsRight,
+} from 'lucide-react'
 import { useRouter } from 'next/navigation'
 
 type FoodItemTableProps = {
@@ -47,7 +55,13 @@ export function FoodItemTable({ data }: FoodItemTableProps) {
   const table = useReactTable({
     data,
     columns,
+    initialState: {
+      pagination: {
+        pageSize: 10,
+      },
+    },
     getCoreRowModel: getCoreRowModel(),
+    getPaginationRowModel: getPaginationRowModel(),
   })
 
   return (
@@ -85,6 +99,49 @@ export function FoodItemTable({ data }: FoodItemTableProps) {
             ))}
           </TableBody>
         </Table>
+      </div>
+      <div className="flex items-center justify-between">
+        <div className="flex basis-1/3 items-center">
+          <p className="whitespace-nowrap font-bold">
+            {`Página ${table.getState().pagination.pageIndex + 1} de ${table.getPageCount()}`}
+
+            {`Total de ${table.getFilteredRowModel().rows.length}`}
+          </p>
+        </div>
+        <div className="mt-4 space-x-1">
+          <Button
+            variant={'outline'}
+            onClick={() => table.firstPage()}
+            disabled={!table.getCanPreviousPage()}
+          >
+            <ChevronsLeft size={14} />
+            <span className="sr-only">Primeira página </span>
+          </Button>
+          <Button
+            variant={'outline'}
+            onClick={() => table.previousPage()}
+            disabled={!table.getCanPreviousPage()}
+          >
+            <ChevronLeft size={14} />
+            <span className="sr-only">Página anterior</span>
+          </Button>
+          <Button
+            variant={'outline'}
+            onClick={() => table.nextPage()}
+            disabled={!table.getCanNextPage()}
+          >
+            <ChevronRight size={14} />
+            <span className="sr-only">Página seguinte</span>
+          </Button>
+          <Button
+            variant={'outline'}
+            onClick={() => table.lastPage()}
+            disabled={!table.getCanNextPage()}
+          >
+            <ChevronsRight size={14} />
+            <span className="sr-only">Última página</span>
+          </Button>
+        </div>
       </div>
     </div>
   )
