@@ -18,7 +18,7 @@ namespace backend.Controllers
 
         // Rota para retornar os FoodItems com paginação e filtro por nome
         [HttpGet]
-        public async Task<IActionResult> GetFoodItems([FromQuery] string search, [FromQuery] int page = 1, [FromQuery] int pageSize = 10)
+        public async Task<IActionResult> GetFoodItems([FromQuery] string? search, [FromQuery] int page = 1, [FromQuery] int pageSize = 10)
         {
             var result = await _foodItemService.GetFoodItemsAsync(search, page, pageSize);
             return Ok(result);

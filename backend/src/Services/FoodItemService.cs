@@ -6,7 +6,7 @@ namespace backend.Services
 {
     public interface IFoodItemService
     {
-        Task<IEnumerable<FoodItem>> GetFoodItemsAsync(string search, int page, int pageSize);
+        Task<IEnumerable<FoodItem>> GetFoodItemsAsync(string? search, int page, int pageSize);
     }
 
     public class FoodItemService : IFoodItemService
@@ -18,7 +18,7 @@ namespace backend.Services
             _context = context;
         }
 
-        public async Task<IEnumerable<FoodItem>> GetFoodItemsAsync(string search, int page, int pageSize)
+        public async Task<IEnumerable<FoodItem>> GetFoodItemsAsync(string? search, int page, int pageSize)
         {
             var query = _context.FoodItems.AsQueryable();
 
