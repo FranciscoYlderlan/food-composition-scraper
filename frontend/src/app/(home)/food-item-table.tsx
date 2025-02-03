@@ -39,12 +39,6 @@ export function FoodItemTable({ data }: FoodItemTableProps) {
   ]
   const columnHelper = createColumnHelper<FoodItemSchemaType>()
 
-  // const columns = [
-  //   columnHelper.accessor('code', {
-  //     header: 'Código',
-  //   }),
-  // ]
-
   const columns = columnHeadersArray.map((columnName) => {
     return columnHelper.accessor(columnName, {
       id: columnName,
@@ -105,7 +99,7 @@ export function FoodItemTable({ data }: FoodItemTableProps) {
           <p className="whitespace-nowrap font-bold">
             {`Página ${table.getState().pagination.pageIndex + 1} de ${table.getPageCount()}`}
 
-            {`Total de ${table.getFilteredRowModel().rows.length}`}
+            {` Total de ${table.getFilteredRowModel().rows.length}`}
           </p>
         </div>
         <div className="mt-4 space-x-1">
