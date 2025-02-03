@@ -20,9 +20,10 @@ namespace backend.Controllers
         [HttpGet]
         public async Task<IActionResult> GetFoodItems([FromQuery] string? search, [FromQuery] int page = 1, [FromQuery] int pageSize = 10)
         {
-            var result = await _foodItemService.GetFoodItemsAsync(search, page, pageSize);
-            return Ok(result);
+            var (items, totalItems, totalPages) = await _foodItemService.GetFoodItemsAsync(search, page, pageSize);
+            return Ok(new { items, pagination = new { totalItems, totalPages, currentPage = page, pageSize } });
         }
+
 
         // Rota para retornar os componentes de um FoodItem específico
         [HttpGet("{code}/components")]

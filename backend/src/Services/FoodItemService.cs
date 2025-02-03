@@ -6,7 +6,7 @@ namespace backend.Services
 {
     public interface IFoodItemService
     {
-        Task<IEnumerable<FoodItem>> GetFoodItemsAsync(string? search, int page, int pageSize);
+        Task<(IEnumerable<FoodItem> Items, int TotalItems, int TotalPages)> GetFoodItemsAsync(string? search, int page, int pageSize);
     }
 
     public class FoodItemService : IFoodItemService
@@ -18,19 +18,21 @@ namespace backend.Services
             _context = context;
         }
 
-        public async Task<IEnumerable<FoodItem>> GetFoodItemsAsync(string? search, int page, int pageSize)
+        public async Task<(IEnumerable<FoodItem>, int, int)> GetFoodItemsAsync(string? search, int page, int pageSize)
         {
             var query = _context.FoodItems.AsQueryable();
 
             if (!string.IsNullOrEmpty(search))
             {
-                query = query.Where(f => f.Name.Contains(search));
+                query = query.Where(f => f.Name.ToLower().Contains(search.ToLower()));
             }
 
-            return await query
-                .Skip((page - 1) * pageSize)
-                .Take(pageSize)
-                .ToListAsync();
+            int totalItems = await query.CountAsync();
+            int totalPages = (int)Math.Ceiling((double)totalItems / pageSize);
+
+            var items = await query.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
+
+            return (items, totalItems, totalPages);
         }
     }
 }
