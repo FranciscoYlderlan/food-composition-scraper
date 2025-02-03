@@ -1,4 +1,5 @@
 import { z } from 'zod'
+import { PaginationSchema } from './pagination-schema'
 
 const FoodItemSchema = z.object({
   code: z.string().min(1, 'Code cannot be empty'),
@@ -9,6 +10,17 @@ const FoodItemSchema = z.object({
   // components: z.array(ComponentSchema),
 })
 
-type FoodItemSchemaType = z.infer<typeof FoodItemSchema>
+const FoodItemResponseSchema = z.object({
+  items: z.array(FoodItemSchema),
+  pagination: PaginationSchema,
+})
 
-export { FoodItemSchema, type FoodItemSchemaType }
+type FoodItemSchemaType = z.infer<typeof FoodItemSchema>
+type FoodItemResponseType = z.infer<typeof FoodItemResponseSchema>
+
+export {
+  FoodItemResponseSchema,
+  FoodItemSchema,
+  type FoodItemResponseType,
+  type FoodItemSchemaType,
+}

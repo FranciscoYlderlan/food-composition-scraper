@@ -1,5 +1,5 @@
 'use client'
-import { Button } from '@/components/ui/button'
+import { Pagination } from '@/components/pagination'
 import {
   Table,
   TableBody,
@@ -9,6 +9,7 @@ import {
   TableRow,
 } from '@/components/ui/table'
 import { FoodItemSchemaType } from '@/models/schemas/zod/food-item-schema'
+import { PaginationSchemaType } from '@/models/schemas/zod/pagination-schema'
 import {
   createColumnHelper,
   flexRender,
@@ -16,20 +17,16 @@ import {
   getPaginationRowModel,
   useReactTable,
 } from '@tanstack/react-table'
-import {
-  ChevronLeft,
-  ChevronRight,
-  ChevronsLeft,
-  ChevronsRight,
-} from 'lucide-react'
 import { useRouter } from 'next/navigation'
 
 type FoodItemTableProps = {
   data: FoodItemSchemaType[]
+  pagination: PaginationSchemaType
 }
 
-export function FoodItemTable({ data }: FoodItemTableProps) {
+export function FoodItemTable({ data, pagination }: FoodItemTableProps) {
   const router = useRouter()
+
   const columnHeadersArray: Array<keyof FoodItemSchemaType> = [
     'code',
     'name',
@@ -51,7 +48,7 @@ export function FoodItemTable({ data }: FoodItemTableProps) {
     columns,
     initialState: {
       pagination: {
-        pageSize: 10,
+        pageSize: pagination.pageSize,
       },
     },
     getCoreRowModel: getCoreRowModel(),
@@ -94,49 +91,7 @@ export function FoodItemTable({ data }: FoodItemTableProps) {
           </TableBody>
         </Table>
       </div>
-      <div className="flex items-center justify-between">
-        <div className="flex basis-1/3 items-center">
-          <p className="whitespace-nowrap font-bold">
-            {`Página ${table.getState().pagination.pageIndex + 1} de ${table.getPageCount()}`}
-
-            {` Total de ${table.getFilteredRowModel().rows.length}`}
-          </p>
-        </div>
-        <div className="mt-4 space-x-1">
-          <Button
-            variant={'outline'}
-            onClick={() => table.firstPage()}
-            disabled={!table.getCanPreviousPage()}
-          >
-            <ChevronsLeft size={14} />
-            <span className="sr-only">Primeira página </span>
-          </Button>
-          <Button
-            variant={'outline'}
-            onClick={() => table.previousPage()}
-            disabled={!table.getCanPreviousPage()}
-          >
-            <ChevronLeft size={14} />
-            <span className="sr-only">Página anterior</span>
-          </Button>
-          <Button
-            variant={'outline'}
-            onClick={() => table.nextPage()}
-            disabled={!table.getCanNextPage()}
-          >
-            <ChevronRight size={14} />
-            <span className="sr-only">Página seguinte</span>
-          </Button>
-          <Button
-            variant={'outline'}
-            onClick={() => table.lastPage()}
-            disabled={!table.getCanNextPage()}
-          >
-            <ChevronsRight size={14} />
-            <span className="sr-only">Última página</span>
-          </Button>
-        </div>
-      </div>
+      <Pagination pagination={pagination} />
     </div>
   )
 }

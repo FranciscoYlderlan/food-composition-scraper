@@ -1,16 +1,20 @@
 import { Suspense } from 'react'
 import FoodItemTableContainer from './food-item-table-container'
 
-export default async function Home({
-  searchParams,
-}: {
-  searchParams: Promise<{ search: string }>
+export default async function Page(props: {
+  searchParams?: Promise<{
+    search?: string
+    page?: string
+  }>
 }) {
-  const { search } = await searchParams
+  const searchParams = await props.searchParams
+  const search = searchParams?.search || ''
+  const currentPage = Number(searchParams?.page) || 1
+
   return (
     <div className="p-2">
-      <Suspense fallback={<>Carregando ...</>}>
-        <FoodItemTableContainer search={search} />
+      <Suspense key={search + currentPage} fallback={<>Carregando ...</>}>
+        <FoodItemTableContainer search={search} page={currentPage} />
       </Suspense>
     </div>
   )
