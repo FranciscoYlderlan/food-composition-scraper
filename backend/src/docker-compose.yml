@@ -1,0 +1,13 @@
+﻿services:
+  postgres:
+    container_name: tbca
+    image: postgres:alpine
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: tbca
+      PGDATA: /data/postgres
+    volumes:
+      - ./tbca-data/pg:/data/postgres
