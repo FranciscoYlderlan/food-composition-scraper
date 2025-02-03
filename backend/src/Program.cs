@@ -1,4 +1,5 @@
 using backend.Data;
+using backend.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +14,10 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AppDbContext>(options => {
     options.UseNpgsql(builder.Configuration.GetConnectionString("DbConnection"));
 });
+
+builder.Services.AddHttpClient<IWebScrapingService, WebScrapingService>();
+builder.Services.AddScoped<IFoodItemService, FoodItemService>();
+builder.Services.AddScoped<IComponentService, ComponentService>();
 
 var app = builder.Build();
 
