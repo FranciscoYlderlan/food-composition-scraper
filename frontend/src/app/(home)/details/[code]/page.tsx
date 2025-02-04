@@ -1,4 +1,4 @@
-import { ComponentsTableSkeleton } from '@/components/skeletons/components-table-skeleton'
+import { TableSkeleton } from '@/components/skeletons/table-skeleton'
 import { getComponents } from '@/services/get-food-item-components'
 import { Suspense } from 'react'
 import { ComponentTable } from '../component-table'
@@ -12,10 +12,8 @@ export default async function Component({
   const components = await getComponents(code)
 
   return (
-    <div>
-      <Suspense fallback={<ComponentsTableSkeleton />}>
-        <ComponentTable data={components} />
-      </Suspense>
-    </div>
+    <Suspense fallback={<TableSkeleton />}>
+      <ComponentTable data={components} />
+    </Suspense>
   )
 }
