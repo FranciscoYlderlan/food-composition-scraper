@@ -15,7 +15,7 @@ builder.Services.AddSwaggerGen();
 // Conexão com o banco de dados, agora usando as variáveis de ambiente
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
-    var dbConnection = builder.Configuration["DbConnection"]; // Usando a variável de ambiente DbConnection
+    var dbConnection = builder.Configuration.GetConnectionString("DbConnection");
     if (string.IsNullOrEmpty(dbConnection))
     {
         throw new InvalidOperationException("A string de conexão do banco de dados não foi configurada.");
