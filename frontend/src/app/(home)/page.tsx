@@ -1,3 +1,4 @@
+import { FoodItemsTableSkeleton } from '@/components/skeletons/food-items-table-skeleton'
 import { Suspense } from 'react'
 import FoodItemTableContainer from './food-item-table-container'
 
@@ -13,7 +14,10 @@ export default async function Page(props: {
 
   return (
     <div className="p-2">
-      <Suspense key={search + currentPage} fallback={<>Carregando ...</>}>
+      <Suspense
+        key={search + currentPage}
+        fallback={<FoodItemsTableSkeleton />}
+      >
         <FoodItemTableContainer search={search} page={currentPage} />
       </Suspense>
     </div>
