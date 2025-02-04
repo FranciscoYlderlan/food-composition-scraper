@@ -11,14 +11,17 @@
 	<em>Desenvolvido com as ferramentas e tecnologias abaixo.</em>
 </p>
 <p align="center">
-	<img src="https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=flat-square&logo=JavaScript&logoColor=black" alt="JavaScript">
-	<img src="https://img.shields.io/badge/Prettier-F7B93E.svg?style=flat-square&logo=Prettier&logoColor=black" alt="Prettier">
-	<img src="https://img.shields.io/badge/PostCSS-DD3A0A.svg?style=flat-square&logo=PostCSS&logoColor=white" alt="PostCSS">
-	<img src="https://img.shields.io/badge/YAML-CB171E.svg?style=flat-square&logo=YAML&logoColor=white" alt="YAML">
-	<img src="https://img.shields.io/badge/React-61DAFB.svg?style=flat-square&logo=React&logoColor=black" alt="React">
-	<img src="https://img.shields.io/badge/ESLint-4B32C3.svg?style=flat-square&logo=ESLint&logoColor=white" alt="ESLint">
-	<img src="https://img.shields.io/badge/TypeScript-3178C6.svg?style=flat-square&logo=TypeScript&logoColor=white" alt="TypeScript">
-	<img src="https://img.shields.io/badge/JSON-000000.svg?style=flat-square&logo=JSON&logoColor=white" alt="JSON">
+![ReactJS](https://img.shields.io/badge/ReactJS-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![NextJS](https://img.shields.io/badge/NextJS-000000?style=for-the-badge&logo=next.js&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Shadcn/UI](https://img.shields.io/badge/Shadcn/UI-FFFFFF?style=for-the-badge&logo=shadcn/ui&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Zod](https://img.shields.io/badge/Zod-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white)
+![.NET Core 6](https://img.shields.io/badge/.NET%20Core%206-512BD4?style=for-the-badge&logo=.net&logoColor=white)
+![Html Agility Pack](https://img.shields.io/badge/Html%20Agility%20Pack-00599C?style=for-the-badge&logo=html5&logoColor=white)
+![Entity Framework](https://img.shields.io/badge/Entity%20Framework-512BD4?style=for-the-badge&logo=.net&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
 </p>
 
 ---
@@ -286,8 +289,8 @@ pnpm run dev
 ---
 
 ## 🙌 Agradecimentos
-Agradeço a você, que está lendo esta documentação e ama programar como eu 👩‍💻👨‍💻. 
-Agradeço também à equipe TMJobs 🙏, foi um prazer imenso desenvolver esta aplicação. Enquanto trabalhava, estava com um sorriso de orelha a orelha 😄, então, muito obrigado pela oportunidade. Independentemente de qualquer coisa, sei que nossos futuros serão brilhantes ✨, porque pessoas como nós, que se incomodam profundamente com a inércia ⚡, têm o corpo pulsando por aprender, evoluir e enfrentar desafios 💪, continuam sorrindo quando eles surgem 😊. Que 2025 seja ainda melhor do que já começou! 🎉
+- Agradeço a você, que está lendo esta documentação e ama programar como eu 👩‍💻👨‍💻. 
+- Agradeço também à equipe TMJobs 🙏, foi um prazer imenso desenvolver esta aplicação. Enquanto trabalhava, estava com um sorriso de orelha a orelha 😄, então, muito obrigado pela oportunidade. Independentemente de qualquer coisa, sei que nossos futuros serão brilhantes ✨, porque pessoas como nós, que se incomodam profundamente com a inércia ⚡, têm o corpo pulsando por aprender, evoluir e enfrentar desafios 💪, continuam sorrindo quando eles surgem 😊. Que 2025 seja ainda melhor do que já começou! 🎉
 
 [**Voltar ao topo**](#-visão-geral)
 
