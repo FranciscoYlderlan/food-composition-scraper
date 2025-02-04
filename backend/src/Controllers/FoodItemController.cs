@@ -1,4 +1,5 @@
-﻿using backend.Services;
+﻿using backend.Dtos;
+using backend.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace backend.Controllers
@@ -21,8 +22,22 @@ namespace backend.Controllers
         public async Task<IActionResult> GetFoodItems([FromQuery] string? search, [FromQuery] int page = 1, [FromQuery] int pageSize = 10)
         {
             var (items, totalItems, totalPages) = await _foodItemService.GetFoodItemsAsync(search, page, pageSize);
-            return Ok(new { items, pagination = new { totalItems, totalPages, currentPage = page, pageSize } });
+
+            var response = new PagedFoodItemsResponse
+            {
+                Items = items,
+                Pagination = new Pagination
+                {
+                    TotalItems = totalItems,
+                    TotalPages = totalPages,
+                    CurrentPage = page,
+                    PageSize = pageSize
+                }
+            };
+
+            return Ok(response);
         }
+
 
 
         // Rota para retornar os componentes de um FoodItem específico
