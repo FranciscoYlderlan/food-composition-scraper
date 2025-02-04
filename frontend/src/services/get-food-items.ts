@@ -1,5 +1,6 @@
+import { env } from '@/env/'
 import { FoodItemResponseType } from '@/models/schemas/zod/food-item-schema'
-import { env } from 'process'
+
 type getFoodItemsProps = {
   search?: string
   page?: number
