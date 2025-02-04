@@ -5,23 +5,30 @@
     <h1 align="center">FOOD-COMPOSITION-SCRAPER</h1>
 </p>
 <p align="center">
-    <em><code>► INSERIR TEXTO AQUI</code></em>
+    <em>🥗 Food Composition Scraper é um projeto de web scraping para extrair dados sobre alimentos e suas composições. Usa ReactJS ⚛️, NextJS 🚀, TailwindCSS 💨, Shadcn/UI 🎨, TypeScript 🔤, e Zod 🧩 no frontend. No backend, utiliza C# 💻, .NET Core 6 🖥️, Html Agility Pack 🧑‍💻, Entity Framework 📦 e PostgreSQL 🗃️.</em>
 </p>
 <p align="center">
 	<em>Desenvolvido com as ferramentas e tecnologias abaixo.</em>
 </p>
 <p align="center">
-![ReactJS](https://img.shields.io/badge/ReactJS-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![NextJS](https://img.shields.io/badge/NextJS-000000?style=for-the-badge&logo=next.js&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
-![Shadcn/UI](https://img.shields.io/badge/Shadcn/UI-FFFFFF?style=for-the-badge&logo=shadcn/ui&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![Zod](https://img.shields.io/badge/Zod-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white)
-![.NET Core 6](https://img.shields.io/badge/.NET%20Core%206-512BD4?style=for-the-badge&logo=.net&logoColor=white)
-![Html Agility Pack](https://img.shields.io/badge/Html%20Agility%20Pack-00599C?style=for-the-badge&logo=html5&logoColor=white)
-![Entity Framework](https://img.shields.io/badge/Entity%20Framework-512BD4?style=for-the-badge&logo=.net&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
+<img src="https://img.shields.io/badge/ReactJS-61DAFB.svg?style=flat-square&logo=React&logoColor=black" alt="ReactJS">
+<img src="https://img.shields.io/badge/NextJS-000000.svg?style=flat-square&logo=Next.js&logoColor=white" alt="NextJS">
+<img src="https://img.shields.io/badge/TailwindCSS-38B2AC.svg?style=flat-square&logo=Tailwind%20CSS&logoColor=white" alt="TailwindCSS">
+<img src="https://img.shields.io/badge/Shadcn/UI-FFFFFF.svg?style=flat-square&logo=shadcnui&logoColor=black" alt="Shadcn/UI">
+<img src="https://img.shields.io/badge/TanStack-FF4154.svg?style=flat-square&logo=TanStack&logoColor=white" alt="TanStack">
+<img src="https://img.shields.io/badge/TypeScript-3178C6.svg?style=flat-square&logo=TypeScript&logoColor=white" alt="TypeScript">
+<img src="https://img.shields.io/badge/pnpm-F69220.svg?style=flat-square&logo=pnpm&logoColor=fff" alt="pnpm">
+<img src="https://img.shields.io/badge/Zod-3178C6.svg?style=flat-square&logo=Zod&logoColor=white" alt="Zod">
+<img src="https://img.shields.io/badge/ESLint-4B32C3.svg?style=flat-square&logo=ESLint&logoColor=white" alt="ESLint">
+<img src="https://img.shields.io/badge/Prettier-F7B93E.svg?style=flat-square&logo=Prettier&logoColor=black" alt="Prettier">
+<img src="https://img.shields.io/badge/C%23-239120.svg?style=flat-square&logo=C%20Sharp&logoColor=white" alt="C#">
+<img src="https://img.shields.io/badge/.NET%208-512BD4.svg?style=flat-square&logo=.NET&logoColor=white" alt=".NET 8">
+<img src="https://img.shields.io/badge/Html%20Agility%20Pack-00599C.svg?style=flat-square&logo=HTML5&logoColor=white" alt="Html Agility Pack">
+<img src="https://img.shields.io/badge/Entity%20Framework-512BD4.svg?style=flat-square&logo=.NET&logoColor=white" alt="Entity Framework">
+<img src="https://img.shields.io/badge/PostgreSQL-336791.svg?style=flat-square&logo=PostgreSQL&logoColor=white" alt="PostgreSQL">
+<img src="https://img.shields.io/badge/FakeItEasy-000000.svg?style=flat-square&logo=FakeItEasy&logoColor=white" alt="FakeItEasy">
+<img src="https://img.shields.io/badge/xUnit.net-5A2D91.svg?style=flat-square&logo=xUnit&logoColor=white" alt="xUnit.net">
+
 </p>
 
 ---
