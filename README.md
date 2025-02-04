@@ -211,11 +211,15 @@ food-composition-scraper/
 
 ### ✅ Requisitos
 
-- **.NET Core 6**
-- **Node.js 18+**
-- **PostgreSQL**
+- **Visual Studio 22**
+- **.NET Core 8 (Long Term Support Versions)**
+- **Docker**
+- **Node.js 23+**
+- **pnpm**
 
-### 📥 Instalação
+
+
+### 📥 Instalação (Frontend)
 
 1. Clone o repositório:
    ```sh
@@ -225,28 +229,48 @@ food-composition-scraper/
    ```sh
    cd food-composition-scraper
    ```
-3. Instale as dependências do backend:
+3. Instale as dependências do frontend:
    ```sh
-   dotnet build
+   cd frontend && pnpm i
    ```
-4. Instale as dependências do frontend:
+4. Adicione o arquivo .env e configure as variáveis de ambiente:
    ```sh
-   cd frontend && npm install
+   API_URL="http://localhost:5172/api/"
+   ```
+
+
+### 📥 Instalação (Backend)
+
+1. Acesse projeto através da solução "backend.sln:
+   
+2. Instale o pacote dotnet-ef:
+   ```sh
+   dotnet tool install dotnet-ef ou dotnet tool install --global dotnet-ef 
+   ```
+3. Altere a dbConnection nos arquivos launchSettings.json e appSettings.json para testar local.
+
+4. Executar as migrations:
+   ```sh
+   dotnet ef database update
+   ```
+5. Suba o banco de dados com o Docker Compose:
+   ```sh
+   docker compose up ou sudo docker compose up
    ```
 
 ### ▶️ Uso
 
-Rodando o **backend**:
+Rodando o **backend**: (Ao ter conexão estabelecida o sistema irá identificar que o banco está vazio e iniciar a inserção a partir de batch (tamanho 100))
 
 ```sh
-dotnet run
+(via interface) ou dotnet run
 ```
 
 Rodando o **frontend**:
 
 ```sh
 cd frontend
-npm run dev
+pnpm run dev
 ```
 
 ---
@@ -255,31 +279,15 @@ npm run dev
 
 - [x] Criar API para scraping e banco de dados.
 - [x] Criar interface para visualização dos alimentos.
-- [ ] Melhorar o design e adicionar **gráficos** interativos.
-- [ ] Criar testes unitários para os serviços.
-
----
-
-## 🤝 Contribuindo
-
-Contribuições são bem-vindas!
-
-1. **Faça um fork** do repositório.
-2. **Crie um branch** para suas alterações.
-3. **Faça um commit** descritivo.
-4. **Crie um Pull Request**.
-
----
-
-## 📜 Licença
-
-Este projeto está sob a licença [MIT](https://choosealicense.com/licenses/mit/).
+- [x] Criar testes unitários para os serviços.
+- [ ] Utilizar o Redis para cache.
+- [ ] Realizar refactory no backend.
 
 ---
 
 ## 🙌 Agradecimentos
-
-Agradecimentos a todas as tecnologias envolvidas e à comunidade open-source!
+Agradeço a você, que está lendo esta documentação e ama programar como eu 👩‍💻👨‍💻. 
+Agradeço também à equipe TMJobs 🙏, foi um prazer imenso desenvolver esta aplicação. Enquanto trabalhava, estava com um sorriso de orelha a orelha 😄, então, muito obrigado pela oportunidade. Independentemente de qualquer coisa, sei que nossos futuros serão brilhantes ✨, porque pessoas como nós, que se incomodam profundamente com a inércia ⚡, têm o corpo pulsando por aprender, evoluir e enfrentar desafios 💪, continuam sorrindo quando eles surgem 😊. Que 2025 seja ainda melhor do que já começou! 🎉
 
 [**Voltar ao topo**](#-visão-geral)
 
