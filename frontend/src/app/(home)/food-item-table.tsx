@@ -26,7 +26,7 @@ type FoodItemTableProps = {
 
 export function FoodItemTable({ data, pagination }: FoodItemTableProps) {
   const router = useRouter()
-
+  const totalPage = data.length
   const columnHeadersArray: Array<keyof FoodItemSchemaType> = [
     'code',
     'name',
@@ -91,7 +91,7 @@ export function FoodItemTable({ data, pagination }: FoodItemTableProps) {
           </TableBody>
         </Table>
       </div>
-      <Pagination pagination={pagination} />
+      <Pagination pagination={{ totalPage, ...pagination }} />
     </div>
   )
 }

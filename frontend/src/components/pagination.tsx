@@ -10,11 +10,11 @@ import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { Button } from './ui/button'
 
 export type PaginationProps = {
-  pagination: PaginationSchemaType
+  pagination: PaginationSchemaType & { totalPage: number }
 }
 
 export function Pagination({ pagination }: PaginationProps) {
-  const { totalItems, totalPages } = pagination
+  const { totalItems, totalPages, totalPage, pageSize } = pagination
 
   const pathname = usePathname()
   const searchParams = useSearchParams()
@@ -32,7 +32,11 @@ export function Pagination({ pagination }: PaginationProps) {
       <span className="text-xs text-muted-foreground md:text-sm">
         Total de {totalItems} item(s)
       </span>
+
       <div className="flex items-center gap-6 lg:gap-8">
+        <span className="text-xs text-muted-foreground md:text-sm">
+          {totalPage} de {pageSize} item(s)
+        </span>
         <div className="flex text-xs font-medium md:text-sm">
           Página {currentPage} de {totalPages}
         </div>

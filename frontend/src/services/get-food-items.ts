@@ -9,7 +9,7 @@ type getFoodItemsProps = {
 export async function getFoodItems({
   search = '',
   page = 1,
-  pageSize = 15,
+  pageSize = 10,
 }: getFoodItemsProps): Promise<FoodItemResponseType> {
   const response = await fetch(
     `${env.API_URL}FoodItem?page=${page}&pageSize=${pageSize}&search=${search}`,
