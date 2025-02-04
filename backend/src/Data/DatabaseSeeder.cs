@@ -18,27 +18,12 @@ public class DatabaseSeeder
     {
         _logger.LogInformation("Iniciando o processo de seed...");
 
-        // Verifica se o banco está vazio
-        if (!_context.FoodItems.Any())
+        bool isDatabaseEmpty = !_context.FoodItems.Any();
+
+        if (isDatabaseEmpty)
         {
             _logger.LogInformation("Banco de dados está vazio. Iniciando o scraping dos dados...");
-
-            var foodItems = await _scrapingService.ScrapeFoodItemsAsync();
-
-            if (foodItems.Any())
-            {
-                _logger.LogInformation($"Scraping concluído. {foodItems.Count} itens alimentícios encontrados.");
-
-                _logger.LogInformation("Inserindo os dados no banco de dados...");
-                await _context.FoodItems.AddRangeAsync(foodItems);
-                await _context.SaveChangesAsync();
-
-                _logger.LogInformation("Inserção concluída com sucesso.");
-            }
-            else
-            {
-                _logger.LogWarning("Nenhum item alimentício encontrado durante o scraping.");
-            }
+            await _scrapingService.ScrapeAndInsertFoodItemsAsync();
         }
         else
         {
