@@ -5,7 +5,7 @@
     <h1 align="center">FOOD-COMPOSITION-SCRAPER</h1>
 </p>
 <p align="center">
-    <em>🥗 Food Composition Scraper é um projeto de web scraping para extrair dados sobre alimentos e suas composições. Usa ReactJS ⚛️, NextJS 🚀, TailwindCSS 💨, Shadcn/UI 🎨, TypeScript 🔤, e Zod 🧩 no frontend. No backend, utiliza C# 💻, .NET Core 6 🖥️, Html Agility Pack 🧑‍💻, Entity Framework 📦 e PostgreSQL 🗃️.</em>
+    <em>🥗 Food Composition Scraper é um projeto de web scraping para extrair dados sobre alimentos e suas composições. Usa ReactJS ⚛️, NextJS 🚀, TailwindCSS 💨, Shadcn/UI 🎨, TypeScript 🔤, e Zod 🧩 no frontend. No backend, utiliza C# 💻, .NET 🖥️, Html Agility Pack 🧑‍💻, Entity Framework 📦 e PostgreSQL 🗃️.</em>
 </p>
 <p align="center">
 	<em>Desenvolvido com as ferramentas e tecnologias abaixo.</em>
@@ -55,7 +55,7 @@
 🥗 **Food Composition Scraper** é um projeto de **web scraping** para extrair informações nutricionais de alimentos.
 
 🔹 **Frontend**: ReactJS ⚛️, NextJS 🚀, TailwindCSS 💨, Shadcn/UI 🎨, TypeScript 🔤, Zod 🧩.  
-🔹 **Backend**: C# 💻, .NET Core 6 🖥️, Html Agility Pack 🧑‍💻, Entity Framework 📦, PostgreSQL 🗃️.
+🔹 **Backend**: C# 💻, .NET 🖥️, Html Agility Pack 🧑‍💻, Entity Framework 📦, PostgreSQL 🗃️.
 
 ---
 
