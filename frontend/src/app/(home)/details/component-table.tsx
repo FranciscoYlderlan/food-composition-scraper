@@ -47,41 +47,39 @@ export function ComponentTable({ data }: ComponentTableProps) {
   })
 
   return (
-    <div>
-      <div className="mt-6 overflow-hidden rounded-lg border border-border">
-        <Table className="border">
-          <TableHeader>
-            {table.getHeaderGroups().map(({ id, headers }, index) => (
-              <TableRow key={id + index}>
-                {headers.map(
-                  ({ id, column, isPlaceholder, getContext }, index) => (
-                    <TableHead key={id + index} className="bg-secondary">
-                      <div>
-                        {isPlaceholder
-                          ? null
-                          : flexRender(column.columnDef.header, getContext())}
-                      </div>
-                    </TableHead>
-                  )
-                )}
-              </TableRow>
-            ))}
-          </TableHeader>
-          <TableBody>
-            {table.getRowModel().rows.map((row, index) => (
-              <TableRow key={row.id + index}>
-                {row
-                  .getVisibleCells()
-                  .map(({ id, column, getContext }, index) => (
-                    <TableCell key={id + index} className="border">
-                      {flexRender(column.columnDef.cell, getContext())}
-                    </TableCell>
-                  ))}
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </div>
+    <div className="my-6 w-full overflow-hidden rounded-lg border border-border">
+      <Table className="border">
+        <TableHeader>
+          {table.getHeaderGroups().map(({ id, headers }, index) => (
+            <TableRow key={id + index}>
+              {headers.map(
+                ({ id, column, isPlaceholder, getContext }, index) => (
+                  <TableHead key={id + index} className="bg-secondary">
+                    <div>
+                      {isPlaceholder
+                        ? null
+                        : flexRender(column.columnDef.header, getContext())}
+                    </div>
+                  </TableHead>
+                )
+              )}
+            </TableRow>
+          ))}
+        </TableHeader>
+        <TableBody>
+          {table.getRowModel().rows.map((row, index) => (
+            <TableRow key={row.id + index}>
+              {row
+                .getVisibleCells()
+                .map(({ id, column, getContext }, index) => (
+                  <TableCell key={id + index} className="border">
+                    {flexRender(column.columnDef.cell, getContext())}
+                  </TableCell>
+                ))}
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
     </div>
   )
 }
