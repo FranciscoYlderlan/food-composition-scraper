@@ -64,6 +64,9 @@
 ```sh
 food-composition-scraper/
 ├── README.md
+├── backend.test/
+│   │   ├── Controllers/
+│   │   │   └── FoodItemController.cs
 ├── backend/
 │   ├── src/
 │   │   ├── Controllers/
@@ -77,6 +80,10 @@ food-composition-scraper/
 │   │   ├── Models/
 │   │   │   ├── FoodItem.cs
 │   │   │   ├── Component.cs
+│   │   ├── Services/
+│   │   │   ├── ComponentService.cs
+│   │   │   ├── FoodItemService.cs
+│   │   │   └── WebScrapingService.cs
 │   │   ├── Dtos/
 │   │   │   ├── PagedFoodItemsResponse.cs
 │   │   │   └── Pagination.cs
@@ -85,19 +92,59 @@ food-composition-scraper/
 │   ├── appsettings.json
 │   └── Program.cs
 ├── frontend/
+│   ├── .vs/
+│   |   ├── extensions.json
+│   |   └── settings.json
 │   ├── src/
+│   │   ├── app/
+│   │	│   ├── (home)/
+│   │   │   │   ├── details/
+|   │   │   │   │   ├── [code]/
+|   |   │   │   │   │   └── page.tsx
+|   |   │   │   │   └── component-table.tsx
+|   |   │   │   ├── food-item-table-container.tsx
+|   |   │   │   ├── food-item-table.tsx
+|   |   │   │   └── page.tsx
 │   │   ├── components/
+│   │   │   ├── skeletons/
+│   │   │   │   └── table-skeleton.tsx
 │   │   │   ├── ui/
 │   │   │   │   ├── button.tsx
+│   │   │   │   ├── input.tsx
+│   │   │   │   ├── skeleton.tsx
 │   │   │   │   ├── table.tsx
+│   │   │   ├── header.tsx
+│   │   │   ├── pagination.tsx
+│   │   │   ├── search.tsx
+│   │   │   └── pagination.tsx
 │   │   ├── services/
 │   │   │   ├── get-food-items.ts
+│   │   │   └── get-components.ts
+│   │   ├── constants/
+│   │   │   └── @food-item.ts	
+│   │   ├── env/
+│   │   │   └── index.ts
+│   │   ├── lib/
+│   │   │   └── utils.ts
+│   │   ├── lib/
+│   │   │   └── utils.tsx
+│   │   │   ├── models/
+│   │   │   |   ├── schemas/
+│   │   │   |   |   ├── zod/
+│   │   │   |   |   |   ├── component-schema.ts
+│   │   │   |   |   |   ├── food-item-schema.ts
+│   │   │   |   |   |   └── pagination-schema.ts	
+│   ├── eslint.config.ts
+│   ├── environment.d.ts
+│   ├── components.json
+│   ├── .prettierrc
+│   ├── .gitignore
 │   ├── next.config.ts
 │   ├── tailwind.config.ts
 │   ├── tsconfig.json
 │   ├── package.json
 │   ├── .gitignore
-└── .env.example
+|   └── .env.example
 ```
 
 ---
