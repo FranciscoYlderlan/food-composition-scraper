@@ -2,7 +2,7 @@
 
 import { Search as SearchIcon } from 'lucide-react'
 
-import { usePathname, useRouter, useSearchParams } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 import { useState } from 'react'
 import { Button } from './ui/button'
 import { Input } from './ui/input'
@@ -10,7 +10,7 @@ import { Input } from './ui/input'
 export function Search() {
   const [search, setSearch] = useState<string>('')
   const searchParams = useSearchParams()
-  const pathname = usePathname()
+
   const { replace } = useRouter()
 
   function handleSearch(term: string) {
@@ -21,7 +21,7 @@ export function Search() {
     } else {
       params.delete('search')
     }
-    replace(`${pathname}?${params.toString()}`)
+    replace(`/?${params.toString()}`)
   }
 
   return (
@@ -31,7 +31,7 @@ export function Search() {
         <Input
           id="search"
           name="search"
-          placeholder="Buscar por nome"
+          placeholder="Buscar por nome do alimento..."
           className="absolute right-0 z-10 h-full w-full border-none pl-8"
           autoComplete="off"
           onChange={(e) => {
