@@ -114,7 +114,6 @@ food-composition-scraper/
 │   │   │   │   ├── skeleton.tsx
 │   │   │   │   ├── table.tsx
 │   │   │   ├── header.tsx
-│   │   │   ├── pagination.tsx
 │   │   │   ├── search.tsx
 │   │   │   └── pagination.tsx
 │   │   ├── services/
@@ -126,8 +125,6 @@ food-composition-scraper/
 │   │   │   └── index.ts
 │   │   ├── lib/
 │   │   │   └── utils.ts
-│   │   ├── lib/
-│   │   │   └── utils.tsx
 │   │   │   ├── models/
 │   │   │   |   ├── schemas/
 │   │   │   |   |   ├── zod/
@@ -153,25 +150,60 @@ food-composition-scraper/
 
 ### 📌 **Backend**
 
-| Arquivo                     | Descrição                                                                             |
-| --------------------------- | ------------------------------------------------------------------------------------- |
-| `FoodItemController.cs`     | Controlador que gerencia requisições para buscar informações nutricionais.            |
-| `WebScrapingService.cs`     | Serviço que realiza o **scraping** das informações nutricionais.                      |
-| `FoodItemService.cs`        | Serviço que processa e retorna os dados do banco de dados.                            |
-| `AppDbContext.cs`           | Classe que gerencia a conexão com o banco **PostgreSQL** usando **Entity Framework**. |
-| `DatabaseSeeder.cs`         | Popula o banco de dados com alimentos de exemplo.                                     |
-| `PagedFoodItemsResponse.cs` | Define o formato da resposta para listagem paginada de alimentos.                     |
-| `docker-compose.yml`        | Configuração do **PostgreSQL** para rodar em container Docker.                        |
+| Arquivo                     | Descrição                                                                                                   |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------|
+| `FoodItemController.cs`     | Controlador responsável por gerenciar as requisições para busca de informações sobre alimentos.             |
+| `WebScrapingService.cs`     | Serviço encarregado de realizar o **web scraping** das informações nutricionais de alimentos.               |
+| `FoodItemService.cs`        | Serviço que processa os dados de alimentos e retorna as informações armazenadas no banco de dados.          |
+| `ComponentService.cs`       | Serviço que processa os dados dos componentes alimentares e retorna as informações do banco de dados.       |
+| `AppDbContext.cs`           | Classe que gerencia a conexão com o banco de dados **PostgreSQL** utilizando **Entity Framework**.          |
+| `DatabaseSeeder.cs`         | Responsável por popular o banco de dados com dados de alimentos extraídos, caso esteja vazio (lote de 100). |
+| `PagedFoodItemsResponse.cs` | Define o formato de resposta para a listagem paginada de alimentos.                                         |
+| `Component.cs`              | Entidade que representa os componentes dos alimentos.                                                       |
+| `FoodItem.cs`               | Entidade que representa os alimentos.                                                                       |
+| `Program.cs`                | Arquivo principal de inicialização da aplicação.                                                            |
+| `FoodItemControllerTest.cs` | Arquivo destinado à realização de testes dos serviços relacionados a alimentos.                             |
+| `docker-compose.yml`        | Arquivo de configuração para rodar o **PostgreSQL** em um container Docker.                                 |
 
 ### 🎨 **Frontend**
 
-| Arquivo              | Descrição                               |
-| -------------------- | --------------------------------------- |
-| `get-food-items.ts`  | Serviço que busca os alimentos via API. |
-| `button.tsx`         | Componente reutilizável de **botão**.   |
-| `table.tsx`          | Componente reutilizável de **tabela**.  |
-| `next.config.ts`     | Configuração do **Next.js**.            |
-| `tailwind.config.ts` | Configuração do **TailwindCSS**.        |
+| Arquivo                                       | Descrição                                                                                       |
+| --------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `.vs/extensions.json`                         | Arquivo de configurações de extensões para o Visual Studio.                                     |
+| `.vs/settings.json`                           | Configurações gerais do Visual Studio para o projeto.                                           |
+| `src/app/home/details/[code]/page.tsx`        | Componente responsável pela renderização da página de detalhes de um item específico.           |
+| `src/app/home/details/component-table.tsx`    | Componente que exibe uma tabela com informações detalhadas sobre os alimentos.                  |
+| `src/app/home/food-item-table-container.tsx`  | Componente contêiner que gerencia a renderização de uma lista de alimentos.                     |
+| `src/app/home/food-item-table.tsx`            | Componente responsável por exibir uma tabela de alimentos.                                      |
+| `src/app/home/page.tsx`                       | Componente principal da página de "home", responsável por carregar o conteúdo inicial.          |
+| `src/components/skeletons/table-skeleton.tsx` | Componente de esqueleto para exibir um carregamento de tabela enquanto os dados são carregados. |
+| `src/components/ui/button.tsx`                | Componente de botão reutilizável da interface.                                                  |
+| `src/components/ui/input.tsx`                 | Componente de campo de entrada reutilizável da interface.                                       |
+| `src/components/ui/skeleton.tsx`              | Componente de esqueleto para carregar elementos enquanto o conteúdo está sendo carregado.       |
+| `src/components/ui/table.tsx`                 | Componente de tabela reutilizável para exibição de dados tabulares.                             |
+| `src/components/header.tsx`                   | Componente de cabeçalho da aplicação, provavelmente exibindo o título e navegação.              |
+| `src/components/pagination.tsx`               | Componente de paginação para navegação entre várias páginas de resultados.                      |
+| `src/components/search.tsx`                   | Componente de barra de pesquisa para filtrar os dados exibidos.                                 |
+| `src/services/get-food-items.ts`              | Serviço responsável por buscar e retornar informações sobre alimentos.                          |
+| `src/services/get-components.ts`              | Serviço que busca e retorna os componentes relacionados aos alimentos.                          |
+| `src/constants/@food-item.ts`                 | Arquivo de constantes relacionadas a itens alimentares.                                         |
+| `src/env/index.ts`                            | Arquivo de configuração de variáveis de ambiente para o projeto.                                |
+| `src/lib/utils.ts`                            | Funções utilitárias gerais para uso em toda a aplicação.                                        |
+| `src/lib/models/schemas/zod/component-schema.ts` | Definição do esquema de validação para os componentes usando Zod.                            |
+| `src/lib/models/schemas/zod/food-item-schema.ts` | Definição do esquema de validação para os itens alimentares usando Zod.                      |
+| `src/lib/models/schemas/zod/pagination-schema.ts` | Definição do esquema de validação para a paginação usando Zod.                              |
+| `eslint.config.ts`                                | Arquivo de configuração do ESLint, utilizado para análise estática de código.               |
+| `environment.d.ts`                                | Declarações de tipos relacionadas ao ambiente de execução do projeto.                       |
+| `components.json`                                 | Arquivo que contém configurações ou informações sobre os componentes da aplicação.          |
+| `.prettierrc`                                     | Arquivo de configuração do Prettier para formatação de código.                              |
+| `.gitignore`                                      | Arquivo que especifica arquivos e diretórios que o Git deve ignorar.                        |
+| `next.config.ts`                                  | Arquivo de configuração do Next.js, utilizado para customizar o comportamento da aplicação. |
+| `tailwind.config.ts`                              | Arquivo de configuração do Tailwind CSS para customização de estilos.                       |
+| `tsconfig.json`                                   | Arquivo de configuração do TypeScript para definir opções de compilação.                    |
+| `package.json`                                    | Arquivo que gerencia as dependências e scripts do projeto Node.js.                          |
+| `.gitignore`                                      | Arquivo que especifica arquivos e diretórios a serem ignorados pelo Git.                    |
+| `.env.example`                                    | Exemplo de arquivo `.env` com variáveis de ambiente para configurar o projeto.              |
+
 
 ---
 
