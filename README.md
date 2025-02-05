@@ -176,8 +176,8 @@ food-composition-scraper/
 
 | Arquivo                                       | Descrição                                                                                       |
 | --------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| `.vs/extensions.json`                         | Arquivo de configurações de extensões para o Visual Studio.                                     |
-| `.vs/settings.json`                           | Configurações gerais do Visual Studio para o projeto.                                           |
+| `.vs/extensions.json`                         | Arquivo de configurações de extensões para o Visual Studio Code.                                |
+| `.vs/settings.json`                           | Configurações gerais do Visual Studio Code para o projeto.                                      |
 | `src/app/home/details/[code]/page.tsx`        | Componente responsável pela renderização da página de detalhes de um item específico.           |
 | `src/app/home/details/component-table.tsx`    | Componente que exibe uma tabela com informações detalhadas sobre os alimentos.                  |
 | `src/app/home/food-item-table-container.tsx`  | Componente contêiner que gerencia a renderização de uma lista de alimentos.                     |
