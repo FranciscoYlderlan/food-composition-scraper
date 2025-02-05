@@ -84,9 +84,6 @@ food-composition-scraper/
 │   │   ├── Data/
 │   │   │   ├── AppDbContext.cs
 │   │   │   └── DatabaseSeeder.cs
-│   │   ├── Services/
-│   │   │   ├── WebScrapingService.cs
-│   │   │   ├── FoodItemService.cs
 │   │   ├── Models/
 │   │   │   ├── FoodItem.cs
 │   │   │   ├── Component.cs
@@ -135,9 +132,9 @@ food-composition-scraper/
 │   │   │   └── index.ts
 │   │   ├── lib/
 │   │   │   └── utils.ts
-│   │   │   ├── models/
-│   │   │   |   ├── schemas/
-│   │   │   |   |   ├── zod/
+│   │   └── models/
+│   │   |   └── schemas/
+│   │   │   |   |   └──zod/
 │   │   │   |   |   |   ├── component-schema.ts
 │   │   │   |   |   |   ├── food-item-schema.ts
 │   │   │   |   |   |   └── pagination-schema.ts	
@@ -301,6 +298,3 @@ pnpm run dev
 
 [**Voltar ao topo**](#-visão-geral)
 
-```
-
-```
